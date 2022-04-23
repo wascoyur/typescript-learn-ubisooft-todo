@@ -3,7 +3,7 @@ import { Interface } from 'readline';
 import { IUser } from '../types/types';
 import { UserItem } from './UserItem';
 
-interface UserListProps {
+export interface UserListProps {
   users: IUser[];
 }
 

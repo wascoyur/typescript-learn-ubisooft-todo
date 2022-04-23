@@ -10,12 +10,12 @@
         "@typescript-eslint"
     ],
     "rules": {
-      "no-var": "error",
-    "semi": "error",
-    "indent": "error",
+      "no-var": "warn",
+    "semi": "warn",
+    "indent": "off",
     "no-multi-spaces": "error",
     "space-in-parens": "error",
-    "no-multiple-empty-lines": "error",
+    "no-multiple-empty-lines": "warn",
     "prefer-const": "error",
     "no-use-before-define": "error",
         "@typescript-eslint/strict-boolean-expressions": [

@@ -1,25 +1,40 @@
-import { useState } from 'react';
+import axios from 'axios';
+import { FC, useEffect, useState } from 'react';
 import './App.css';
 import Card, { enumCardVariant } from './component/Card';
+import { List } from './component/List';
+import { TodoItem, UserItem } from './component/UserItem';
 import UserList from './component/UserList';
-import { IUser } from './types/types';
+import { ITodo, IUser } from './types/types';
 
 function App() {
   const [cardVariant, setCardVariant] = useState(enumCardVariant.outlined);
-  const users: IUser[] = [
-    {
-      id: 1,
-      name: 'yur',
-      email: 'q@mail.ru',
-      address: { city: 'Moscow', street: 'Red Square', zip: 614000 },
-    },
-    {
-      id: 2,
-      name: 'wer',
-      email: 'q@gmail.ru',
-      address: { city: 'Spb', street: 'Smolenskaya', zip: 630000 },
-    },
-  ];
+  const [users, setUsers] = useState<IUser[]>([]);
+  const [todos, setTodos] = useState<ITodo[]>([]);
+
+  const fetchUsers = async () => {
+    try {
+      await axios
+        .get<IUser[]>('https://jsonplaceholder.typicode.com/users')
+        .then((res) => setUsers(res.data));
+    } catch (error) {
+      alert(error);
+    }
+  };
+  const fetchTodos = async () => {
+    try {
+      await axios
+        .get<ITodo[]>('https://jsonplaceholder.typicode.com/todos?limit=10')
+        .then((res) => setTodos(res.data));
+    } catch (error) {
+      alert(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchUsers();
+    fetchTodos();
+  }, []);
 
   return (
     <div className='App'>
@@ -31,7 +46,14 @@ function App() {
         onClick={(state) => setCardVariant(enumCardVariant.primary)}>
         <button>click</button>
       </Card>
-      <UserList users={users} />
+      <List
+        items={users}
+        renderItem={(user: IUser) => <UserItem user={user} key={user.id} />}
+      />
+      <List
+        items={todos}
+        renderItem={(todo: ITodo) => <TodoItem todo={todo} key={todo.id} />}
+      />
     </div>
   );
 }
