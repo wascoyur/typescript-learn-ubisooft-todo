@@ -2,6 +2,7 @@ import axios from 'axios';
 import { FC, useEffect, useState } from 'react';
 import './App.css';
 import Card, { enumCardVariant } from './component/Card';
+import EventExample from './component/EventExample';
 import { List } from './component/List';
 import { TodoItem, UserItem } from './component/UserItem';
 import UserList from './component/UserList';
@@ -46,6 +47,7 @@ function App() {
         onClick={(state) => setCardVariant(enumCardVariant.primary)}>
         <button>click</button>
       </Card>
+      <EventExample />
       <List
         items={users}
         renderItem={(user: IUser) => <UserItem user={user} key={user.id} />}
@@ -54,6 +56,7 @@ function App() {
         items={todos}
         renderItem={(todo: ITodo) => <TodoItem todo={todo} key={todo.id} />}
       />
+      <EventExample />
     </div>
   );
 }

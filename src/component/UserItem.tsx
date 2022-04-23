@@ -20,16 +20,9 @@ export const UserItem: FC<IUserItemProps> = ({ user }) => {
     </div>
   );
 };
-export const Checkbox: any = (completed: any) => {
-  return (
-    <div>
-      {/* <span>{JSON.stringify(commpleted)}</span> */}
-      <input type='checkbox' checked={completed}></input>
-    </div>
-  );
-};
+
 export const TodoItem: FC<ITodoItemProps> = ({ todo }) => {
-  const handleCheck = () => {};
+  const handleCheck = () => console.log(`${'handleCheck'}`);
   return (
     <div
       style={{
