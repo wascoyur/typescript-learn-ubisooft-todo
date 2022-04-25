@@ -4,7 +4,7 @@ import { List } from '../component/List';
 import { UserItem } from '../component/UserItem';
 import { ITodo, IUser } from '../types/types';
 
-const UserPages: FC<JSX.Element> = () => {
+const UserPages: FC = () => {
   const [users, setUsers] = useState<IUser[]>([]);
 
   const fetchUsers = async () => {

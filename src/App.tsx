@@ -1,35 +1,33 @@
+import { NavLink } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import EventExample from './component/EventExample';
+import Todo from './pages/Todo';
+import UserPages from './pages/UserPages';
+import userIitemPage from './pages/userIitemPage';
 
 function App() {
-  // const [users, setUsers] = useState<IUser[]>([]);
-  // const [todos, setTodos] = useState<ITodo[]>([]);
+  return (
+    <BrowserRouter>
+      <nav
+        style={{
+          backgroundColor: 'grey',
+          display: 'flex',
+          justifyContent: 'space-around',
+          marginBottom: '1rem',
+        }}>
+        {/* <div className='App'>Home</div> */}
+        <NavLink to='/'>Home</NavLink>
+        <NavLink to='/users'>Users</NavLink>
+        <NavLink to='/todos'>Todos</NavLink>
+      </nav>
 
-  // const fetchUsers = async () => {
-  //   try {
-  //     await axios
-  //       .get<IUser[]>('https://jsonplaceholder.typicode.com/users')
-  //       .then((res) => setUsers(res.data));
-  //   } catch (error) {
-  //     alert(error);
-  //   }
-  // };
-  // const fetchTodos = async () => {
-  //   try {
-  //     await axios
-  //       .get<ITodo[]>('https://jsonplaceholder.typicode.com/todos?limit=10')
-  //       .then((res) => setTodos(res.data));
-  //   } catch (error) {
-  //     alert(error);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   fetchUsers();
-  //   fetchTodos();
-  // }, []);
-
-  return <div className='App'>Home</div>;
+      <Routes>
+        <Route path='/users' element={<UserPages />} />
+        <Route path={'/user/:id'} element={<userItemPage />} />
+        <Route path='/todos' element={<Todo />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
