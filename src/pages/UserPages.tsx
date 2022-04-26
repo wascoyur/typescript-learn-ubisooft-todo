@@ -1,13 +1,13 @@
 import axios from 'axios';
 import React, { FC, useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { List } from '../component/List';
 import { UserItem } from '../component/UserItem';
 import { ITodo, IUser } from '../types/types';
 
 const UserPages: FC = () => {
   const [users, setUsers] = useState<IUser[]>([]);
-  const hisory = useHistory();
+  const hisory = useNavigate();
 
   const fetchUsers = async () => {
     try {
@@ -30,7 +30,11 @@ const UserPages: FC = () => {
       <List
         items={users}
         renderItem={(user: IUser) => (
-          <UserItem onClick={history} user={user} key={user.id} />
+          <UserItem
+            onClick={(user) => hisory(`/users/${user.id}`)}
+            user={user}
+            key={user.id}
+          />
         )}
       />
     </div>
