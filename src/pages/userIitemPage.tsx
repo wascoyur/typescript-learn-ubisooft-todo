@@ -21,7 +21,13 @@ const UserItemPage: FC<JSX.Element> = () => {
   useEffect(() => {
     fetchUser();
   }, []);
-  return <div>userIitemPage</div>;
+  return (
+    <div>
+      <h1>userIitemPage</h1>
+      <h3> {`Имя ${user?.name}`}</h3>
+      <h3> {`Адрес проживания ${user?.address}`}</h3>
+    </div>
+  );
 };
 
 export default UserItemPage;

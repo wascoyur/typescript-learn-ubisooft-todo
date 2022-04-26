@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { FC, useEffect, useState } from 'react';
 import { List } from '../component/List';
-import { TodoItem } from '../component/UserItem';
+import { TodoItem } from '../component/TodoItem';
 import { ITodo } from '../types/types';
 
 const Todo: FC = () => {
