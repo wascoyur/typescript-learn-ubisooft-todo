@@ -10,7 +10,7 @@ const UserPages: FC = () => {
   const fetchUsers = async () => {
     try {
       await axios
-        .get<IUser[]>('https://jsonplaceholder.typicode.com/users')
+        .get<IUser[]>('http://jsonplaceholder.typicode.com/users')
         .then((res) => setUsers(res.data));
     } catch (error) {
       alert(error);
