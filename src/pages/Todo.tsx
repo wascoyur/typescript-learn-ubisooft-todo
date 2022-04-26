@@ -9,7 +9,7 @@ const Todo: FC = () => {
   const fetchTodos = async () => {
     try {
       await axios
-        .get<ITodo[]>('https://jsonplaceholder.typicode.com/todos?limit=5')
+        .get<ITodo[]>('http://jsonplaceholder.typicode.com/todos?limit=5')
         .then((res) => setTodos(res.data));
     } catch (error) {
       alert(error);

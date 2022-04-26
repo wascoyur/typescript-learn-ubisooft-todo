@@ -1,16 +1,18 @@
 import axios from 'axios';
 import React, { FC, useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { List } from '../component/List';
 import { UserItem } from '../component/UserItem';
 import { ITodo, IUser } from '../types/types';
 
 const UserPages: FC = () => {
   const [users, setUsers] = useState<IUser[]>([]);
+  const hisory = useHistory();
 
   const fetchUsers = async () => {
     try {
       await axios
-        .get<IUser[]>('https://jsonplaceholder.typicode.com/users')
+        .get<IUser[]>('http://jsonplaceholder.typicode.com/users')
         .then((res) => setUsers(res.data));
     } catch (error) {
       alert(error);
@@ -27,7 +29,9 @@ const UserPages: FC = () => {
       <hr />
       <List
         items={users}
-        renderItem={(user: IUser) => <UserItem user={user} key={user.id} />}
+        renderItem={(user: IUser) => (
+          <UserItem onClick={history} user={user} key={user.id} />
+        )}
       />
     </div>
   );
