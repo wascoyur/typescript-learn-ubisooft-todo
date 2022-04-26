@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Todo from './pages/Todo';
 import UserPages from './pages/UserPages';
-import userIitemPage from './pages/userIitemPage';
+import UserIitemPage from './pages/userIitemPage'
 
 function App() {
   return (
@@ -23,7 +23,7 @@ function App() {
 
       <Routes>
         <Route path='/users' element={<UserPages />} />
-        <Route path={'/user/:id'} element={<userItemPage />} />
+        <Route path={'/user/:id'} element={<UserIitemPage key={null} type={undefined} props={undefined} />} />
         <Route path='/todos' element={<Todo />} />
       </Routes>
     </BrowserRouter>
