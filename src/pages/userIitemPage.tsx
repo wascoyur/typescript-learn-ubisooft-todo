@@ -22,11 +22,18 @@ const UserItemPage: FC = () => {
     fetchUser();
   }, []);
   return (
-    <div>
-      <h1>Страница даных пользователя</h1>
-      <h3> {`Имя ${user?.name}`}</h3>
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}>
       <div>
-        {`Адрес проживания: город ${user?.address.city}, улица ${user?.address.street}`}
+        <h1>Страница даных пользователя</h1>
+        <h3> {`Имя ${user?.name}`}</h3>
+        <div>
+          {`Адрес проживания: город ${user?.address.city}, улица ${user?.address.street}`}
+        </div>
       </div>
     </div>
   );
