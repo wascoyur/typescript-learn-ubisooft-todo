@@ -1,14 +1,11 @@
 import axios from 'axios';
 import React, { FC, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { IUser } from '../types/types';
 
-interface IUserParams {
-  id: string;
-}
-
-const UserIitemPage: FC = () => {
+const UserItemPage: FC = () => {
   const [user, setUser] = useState<IUser | null>(null);
+  const navigate = useNavigate();
   const params = useParams();
 
   const fetchUser = async () => {
@@ -25,28 +22,14 @@ const UserIitemPage: FC = () => {
     fetchUser();
   }, []);
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}>
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          maxWidth: '5rem',
-          justifyContent: 'right',
-          alignItems: 'center',
-        }}>
-        <h1>userIitemPage</h1>
-        <button>Back</button>
-        {}
-        <div>{user?.email}</div>
-        <h3>{user?.name}</h3>
+    <div>
+      <h1>Страница даных пользователя</h1>
+      <h3> {`Имя ${user?.name}`}</h3>
+      <div>
+        {`Адрес проживания: город ${user?.address.city}, улица ${user?.address.street}`}
       </div>
     </div>
   );
 };
 
-export default UserIitemPage;
+export default UserItemPage;
