@@ -1,9 +1,9 @@
 import { NavLink } from 'react-router-dom';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import TodoItemPage from './pages/TodoItem';
+import TodoItemPage from './pages/TodoItemPage';
 import { TodoItem } from './component/TodoItem';
-import Todo from './pages/Todo';
+import Todo from './pages/TodosPage';
 import UserIitemPage from './pages/userIitemPage';
 import UserPages from './pages/UserPages';
 

@@ -9,7 +9,7 @@ export interface IUserItemProps {
 export interface ITodoItemProps {
   todo: ITodo;
 }
-export const UserItem: FC<IUserItemProps> = ({ user, onClick }) => {
+export const UserItem: FC<IUserItemProps> = ({ user }) => {
   const navigate = useNavigate();
   return (
     <div

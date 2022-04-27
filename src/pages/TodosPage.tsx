@@ -21,7 +21,7 @@ const Todo: FC = () => {
 
   return (
     <div>
-      Todo:FC
+      Todos list
       <hr />
       <List
         items={todos}
