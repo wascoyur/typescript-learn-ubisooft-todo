@@ -6,6 +6,7 @@ import { TodoItem } from './component/TodoItem';
 import Todo from './pages/Todo';
 import UserIitemPage from './pages/userIitemPage';
 import UserPages from './pages/UserPages';
+import UserIitemPage from './pages/userIitemPage'
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
       </nav>
 
       <Routes>
+        {/* <Route path='/' element={<UserPages />} /> */}
         <Route path='/users' element={<UserPages />} />
         <Route path={'/user/:id'} element={<UserIitemPage />} />
         <Route path='/todos' element={<Todo />} />

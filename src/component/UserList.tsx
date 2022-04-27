@@ -12,7 +12,7 @@ export const UserList: FC<UserListProps> = ({ users }) => {
     <div>
       <h2>Users List</h2>
       {users.map((user) => (
-        <UserItem user={user} key={user.id} />
+        <UserItem user={user} key={user.id} onClick={() => {}} />
       ))}
     </div>
   );
