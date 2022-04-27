@@ -24,7 +24,7 @@ function App() {
       </nav>
 
       <Routes>
-        {/* <Route path='/' element={<UserPages />} /> */}
+        {/* <Route path='/' element={<App />} /> */}
         <Route path='/users' element={<UserPages />} />
         <Route path={'/users/:id'} element={<UserIitemPage />} />
         <Route path='/todos' element={<Todo />} />
