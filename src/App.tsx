@@ -6,7 +6,6 @@ import { TodoItem } from './component/TodoItem';
 import Todo from './pages/Todo';
 import UserIitemPage from './pages/userIitemPage';
 import UserPages from './pages/UserPages';
-import UserIitemPage from './pages/userIitemPage'
 
 function App() {
   return (
