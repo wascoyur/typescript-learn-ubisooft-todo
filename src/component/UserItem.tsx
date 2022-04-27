@@ -10,6 +10,7 @@ export interface ITodoItemProps {
 export const UserItem: FC<IUserItemProps> = ({ user }) => {
   return (
     <div
+      onClick={() => console.log(`${user.id}`)}
       style={{
         display: 'flex',
         padding: '0.5rem',

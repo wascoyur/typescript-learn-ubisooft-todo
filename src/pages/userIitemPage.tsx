@@ -3,8 +3,8 @@ import React, { FC, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { IUser } from '../types/types';
 
-const UserItemPage: FC<JSX.Element> = () => {
-  const [user, setUser] = useState<IUser | null>();
+const UserItemPage: FC = () => {
+  const [user, setUser] = useState<IUser | null>(null);
   const navigate = useNavigate();
   const params = useParams();
 
@@ -23,9 +23,11 @@ const UserItemPage: FC<JSX.Element> = () => {
   }, []);
   return (
     <div>
-      <h1>userIitemPage</h1>
+      <h1>Страница даных пользователя</h1>
       <h3> {`Имя ${user?.name}`}</h3>
-      <h3> {`Адрес проживания ${user?.address}`}</h3>
+      <div>
+        {`Адрес проживания: город ${user?.address.city}, улица ${user?.address.street}`}
+      </div>
     </div>
   );
 };

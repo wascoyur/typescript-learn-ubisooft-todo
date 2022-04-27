@@ -23,7 +23,7 @@ function App() {
 
       <Routes>
         <Route path='/users' element={<UserPages />} />
-        <Route path={'/user/:id'} element={<UserIitemPage key={null} type={undefined} props={undefined} />} />
+        <Route path={'/users/:id'} element={<UserIitemPage />} />
         <Route path='/todos' element={<Todo />} />
       </Routes>
     </BrowserRouter>
