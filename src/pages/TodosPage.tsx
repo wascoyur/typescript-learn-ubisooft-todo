@@ -25,7 +25,9 @@ const Todo: FC = () => {
       <hr />
       <List
         items={todos}
-        renderItem={(todo: ITodo) => <TodoItem todo={todo} key={todo.id} />}
+        renderItem={(todo: ITodo) => (
+          <TodoItem todo={todo} key={todo.id} onClick={() => {}} />
+        )}
       />
     </div>
   );
