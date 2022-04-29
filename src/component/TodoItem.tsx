@@ -6,7 +6,6 @@ export interface ITodoItem {
 }
 
 export const TodoItem: FC<ITodoItemProps> = ({ todo }) => {
-  const handleCheck = () => console.log(`${'handleCheck'}`);
   return (
     <div
       style={{
