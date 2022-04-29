@@ -6,9 +6,7 @@ export interface IUserItemProps {
   user: IUser;
   onClick: (user: IUser) => void;
 }
-export interface ITodoItemProps {
-  todo: ITodo;
-}
+
 export const UserItem: FC<IUserItemProps> = ({ user }) => {
   const navigate = useNavigate();
   return (
