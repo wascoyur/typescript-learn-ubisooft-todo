@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { UserItem } from './UserItem';
-import { UserListProps } from './UserList';
+import { UserListProps } from './UserListProps';
 
 interface ListProps<T> {
   items: T[];

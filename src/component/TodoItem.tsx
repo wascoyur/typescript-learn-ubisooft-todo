@@ -1,11 +1,12 @@
 import React, { FC } from 'react';
-import { ITodoItemProps } from '../component/TodoList';
+import { ITodo } from '../types/types';
 
-export interface ITodoItem {
-  onClick: () => void;
+export interface ITodoItemProps {
+  todo: ITodo;
+  todos?: ITodo[];
+  onClick: (todo: ITodo) => void;
 }
-
-export const TodoItem: FC<ITodoItemProps> = ({ todo }) => {
+export const TodoItem: FC<ITodoItemProps> = ({ todo, onClick }) => {
   return (
     <div
       style={{
