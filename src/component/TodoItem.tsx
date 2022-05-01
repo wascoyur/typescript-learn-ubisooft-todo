@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ITodo } from '../types/types';
 
 export interface ITodoItemProps {
@@ -6,9 +7,13 @@ export interface ITodoItemProps {
   todos?: ITodo[];
   onClick: (todo: ITodo) => void;
 }
-export const TodoItem: FC<ITodoItemProps> = ({ todo, onClick }) => {
+export const TodoItem: FC<ITodoItemProps> = ({ todo }) => {
+  const navigate = useNavigate();
   return (
     <div
+      onClick={() => {
+        navigate(`/todos/${todo.id}`, { state: { ...todo } });
+      }}
       style={{
         display: 'flex',
         padding: '0.5rem',

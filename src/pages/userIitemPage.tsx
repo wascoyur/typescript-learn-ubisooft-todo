@@ -5,7 +5,6 @@ import { IUser } from '../types/types';
 
 const UserItemPage: FC = () => {
   const [user, setUser] = useState<IUser | null>(null);
-  const navigate = useNavigate();
   const params = useParams();
 
   const fetchUser = async () => {
