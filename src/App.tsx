@@ -3,7 +3,7 @@ import './App.css';
 function App() {
   return (
     <div>
-      <h1>Redy to Develop</h1>
+      <h1>Typescript - Redux</h1>
     </div>
   );
 }
